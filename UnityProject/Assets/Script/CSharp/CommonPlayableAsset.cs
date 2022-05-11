@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
@@ -7,7 +8,10 @@ namespace Cutscene
 {
     public class CommonPlayableAsset : PlayableAsset, ITimelineClipAsset
     {
-        public string type;
+        public int type;
+        public int id;
+        public List<string> parameters;
+
 
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {

@@ -10,6 +10,6 @@ namespace Cutscene
     [ExcludeFromPreset]
     public class CommonTrack : TrackAsset
     {
-
+        public int type;
     }
 }
