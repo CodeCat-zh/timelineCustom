@@ -8,19 +8,53 @@ namespace Cutscene
 {
     public class CommonPlayableAsset : PlayableAsset, ITimelineClipAsset
     {
-        public int type;
+        public string type;
         public int id;
-        public List<string> parameters;
-
-
+        public List<string> paramList;
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
-            return Playable.Create(graph);
+            return  CreateCommonPlayAsset(graph,owner, type,paramList);
+        }
+
+        public static Playable CreateCommonPlayAsset(PlayableGraph graph,GameObject go,string type,List<string> paramList)
+        {
+            LuaFunctionCallBack behaviourPlayCallBack = null;
+            LuaFunctionCallBack behaviourPauseCallBack = null;
+            LuaFunctionCallBack prepareFrameCallBack = null;
+            LuaFunctionCallBack processFrameCallBack = null;
+
+            var serach = go.GetComponent<SerachTimelineLua>();
+
+            if ( serach )
+            {
+                var binder = serach.GetBinderByType(type);
+
+                behaviourPlayCallBack = binder.BehaviourPauseCallBack;
+                behaviourPauseCallBack = binder.BehaviourPauseCallBack;
+                prepareFrameCallBack = binder.PrepareFrameCallBack;
+                processFrameCallBack = binder.ProcessFrameCallBack;
+            }
+
+            CommonPlayableBehaviour behaviourTemplate = new CommonPlayableBehaviour
+            {
+                behaviourPlayCallBack = behaviourPlayCallBack,
+                behaviourPauseCallBack = behaviourPauseCallBack,
+                prepareFrameCallBack = prepareFrameCallBack,
+                processFrameCallBack = processFrameCallBack,
+                type = type,
+                id = IdCounter++,
+                parmaList = paramList,
+
+            };
+            var playable = ScriptPlayable<CommonPlayableBehaviour>.Create(graph, behaviourTemplate);
+            return playable;
         }
 
         public ClipCaps clipCaps
         {
             get { return ClipCaps.None; }
         }
+
+        public static int IdCounter { get; private set ; }
     }
 }

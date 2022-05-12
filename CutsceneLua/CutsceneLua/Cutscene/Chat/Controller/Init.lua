@@ -1,0 +1,1 @@
+require('Services.Cutscene.Chat.Controller.CutsceneChatMgr')

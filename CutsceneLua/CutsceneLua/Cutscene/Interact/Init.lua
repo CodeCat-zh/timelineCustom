@@ -1,0 +1,1 @@
+require('Services.Cutscene.Interact.Controller')

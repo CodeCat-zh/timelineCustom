@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LuaFunctionBinder : MonoBehaviour
+public class LuaFunctionBinder
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private LuaFunctionCallBack behaviourPlayCallBack = null;
+    private LuaFunctionCallBack behaviourPauseCallBack = null;
+    private LuaFunctionCallBack prepareFrameCallBack = null;
+    private LuaFunctionCallBack processFrameCallBack = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public LuaFunctionCallBack BehaviourPlayCallBack { get => behaviourPlayCallBack; set => behaviourPlayCallBack = value; }
+    public LuaFunctionCallBack BehaviourPauseCallBack { get => behaviourPauseCallBack; set => behaviourPauseCallBack = value; }
+    public LuaFunctionCallBack PrepareFrameCallBack { get => prepareFrameCallBack; set => prepareFrameCallBack = value; }
+    public LuaFunctionCallBack ProcessFrameCallBack { get => processFrameCallBack; set => processFrameCallBack = value; }
 }

@@ -1,0 +1,3 @@
+require('Services.Cutscene.Timeline.PlayableCreator.SceneEffectGroup.SceneEffInstantiatePlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.SceneEffectGroup.HideEnvironmentPlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.SceneEffectGroup.CutsChangeMaterialPlayableCreator')

@@ -1,0 +1,15 @@
+module('BN.Cutscene', package.seeall)
+
+---@class CSharpRuntimeEditorCutsceneTrackType
+CSharpRuntimeEditorCutsceneTrackType = { }
+
+---@desc
+---通用类型的CutsceneTrackType会通过工具接口转换到/Scripts/CSharp/Cutscene/Timeline/RunTimeEditor/Constant，编号从6000开始递增
+CSharpRuntimeEditorCutsceneTrackType.DirectorRadialBlurTrackType = 6000
+CSharpRuntimeEditorCutsceneTrackType.DirectorPosterizeTrackType = 6001
+CSharpRuntimeEditorCutsceneTrackType.DirectorDarkSceneTrackType = 6002
+CSharpRuntimeEditorCutsceneTrackType.DirectorMotionBlurKFrameTrackType = 6003
+CSharpRuntimeEditorCutsceneTrackType.DirectorWeatherTrackType = 6004
+CSharpRuntimeEditorCutsceneTrackType.DirectorPostProcessBloomTrackType = 6005
+CSharpRuntimeEditorCutsceneTrackType.DirectorPostProcessVignetteTrackType = 6006
+CSharpRuntimeEditorCutsceneTrackType.DirectorPostProcessTonemappingTrackType = 6007
