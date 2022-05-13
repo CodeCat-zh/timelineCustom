@@ -1,4 +1,6 @@
 using LuaInterface;
+using UnityEngine;
+
 public class LuaFunctionCallBack
 {
     private  LuaFunction luaFunction;
@@ -14,12 +16,10 @@ public class LuaFunctionCallBack
     public static void Invoke(LuaFunctionCallBack callBack,object[] args)
     {
         LuaFunction luaFunction = callBack.luaFunction;
+ 
         if (luaFunction != null)
         {
-            luaFunction.BeginPCall();
-            luaFunction.Push(args);
-            luaFunction.PCall();
-            luaFunction.EndPCall();
+            luaFunction.Call(callBack.luaTable, args);
         }
      
     }

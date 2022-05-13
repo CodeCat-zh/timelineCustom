@@ -1,13 +1,10 @@
-local TextClip = {}
-
-
+TextClip = {}
 function TextClip:OnBehaviourPlay(args)
-    self.type =args[1]
-    self.id = args[2]
-    self.playable = args[3]
-    self.info = args[4]
-    print(self.id)
-    print(self.type)
+    self.type = args[0]
+    self.id = args[1]
+    self.playable = args[2]
+    self.info = args[3]
+    print("OnBehaviourPlay")
 end
 
 
@@ -24,4 +21,4 @@ function TextClip:ProcessFrame(args)
 end
 
 
-return TextClip
+

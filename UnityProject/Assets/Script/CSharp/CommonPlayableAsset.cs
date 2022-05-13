@@ -8,11 +8,15 @@ namespace Cutscene
 {
     public class CommonPlayableAsset : PlayableAsset, ITimelineClipAsset
     {
-        public string type;
-        public int id;
-        public List<string> paramList;
+        
+        protected string type;
+      
+        protected int id;
+       
+        protected List<string> paramList;
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
+            paramList = this.GetParamList();
             return  CreateCommonPlayAsset(graph,owner, type,paramList);
         }
 
@@ -29,7 +33,7 @@ namespace Cutscene
             {
                 var binder = serach.GetBinderByType(type);
 
-                behaviourPlayCallBack = binder.BehaviourPauseCallBack;
+                behaviourPlayCallBack = binder.BehaviourPlayCallBack;
                 behaviourPauseCallBack = binder.BehaviourPauseCallBack;
                 prepareFrameCallBack = binder.PrepareFrameCallBack;
                 processFrameCallBack = binder.ProcessFrameCallBack;
@@ -56,5 +60,11 @@ namespace Cutscene
         }
 
         public static int IdCounter { get; private set ; }
+
+
+        public virtual List<string> GetParamList()
+        {
+            return new List<string>();
+        }
     }
 }

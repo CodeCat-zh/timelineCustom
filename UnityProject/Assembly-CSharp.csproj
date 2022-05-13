@@ -220,8 +220,6 @@
     <Compile Include="Assets\Source\Generate\UnityEngine_SleepTimeoutWrap.cs" />
     <Compile Include="Assets\Source\Generate\UnityEngine_TrackedReferenceWrap.cs" />
     <Compile Include="Assets\Script\CSharp\LuaFunctionBinder.cs" />
-    <Compile Include="Assets\Script\CSharp\Mgr\LuaStateMgr.cs" />
-    <Compile Include="Assets\Script\CSharp\Mgr\CutsecenrConfigMgr.cs" />
     <Compile Include="Assets\Script\CSharp\Annotation\ExportAB.cs" />
     <Compile Include="Assets\Script\CSharp\Annotation\DecorateTrack.cs" />
     <Compile Include="Assets\Script\CSharp\LuaFunctionCallBack.cs" />
@@ -229,6 +227,8 @@
     <Compile Include="Assets\Script\CSharp\Test\TextTrack.cs" />
     <Compile Include="Assets\Script\CSharp\Test\TextPlayAsset.cs" />
     <Compile Include="Assets\Script\CSharp\Test\TextBehaviour.cs" />
+    <Compile Include="Assets\Script\CSharp\Annotation\FieldConvertToString.cs" />
+    <Compile Include="Assets\Script\CSharp\Mgr\TimeLineUnities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\tolua-master\Assets\Plugins\Debugger.dll" />

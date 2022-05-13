@@ -7,8 +7,4 @@ using UnityEngine.Playables;
 public class TextBehaviour : CommonPlayableBehaviour
 {
 
-   public TextBehaviour()
-   {
-       this.type = "TextClip";
-   }
 }

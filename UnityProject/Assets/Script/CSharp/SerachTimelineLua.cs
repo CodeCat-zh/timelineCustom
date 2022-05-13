@@ -9,21 +9,19 @@ public class SerachTimelineLua : MonoBehaviour
     private static LuaState state;
     private LuaFunction luaFunc;
     private LuaTable table;
-    
+   
     public LuaFunctionBinder GetBinderByType(string type)
     {
         searchRootPath = Application.dataPath + "/Script/lua/Clip";
         if (state == null)
         {
             state = new LuaState();
+            state.AddSearchPath(searchRootPath);
         }
-
-        state.AddSearchPath(searchRootPath);
+        state.LuaPop(state.LuaGetTop());
         state.Require(type);
-   
         var binder = new LuaFunctionBinder();
         var luaClip = state.GetTable(type);
-        Debug.Log(luaClip == null);
         if (luaClip != null)
         {
             binder.BehaviourPlayCallBack = new LuaFunctionCallBack(luaClip.GetLuaFunction("OnBehaviourPlay"), luaClip);
@@ -31,7 +29,7 @@ public class SerachTimelineLua : MonoBehaviour
             binder.PrepareFrameCallBack = new LuaFunctionCallBack(luaClip.GetLuaFunction("PrepareFrame"), luaClip);
             binder.ProcessFrameCallBack = new LuaFunctionCallBack(luaClip.GetLuaFunction("ProcessFrame"), luaClip);
         }
-      
+       
         return binder;
     }
 
