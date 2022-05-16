@@ -3,13 +3,15 @@ using UnityEngine;
 public class TextPlayAsset : CommonPlayableAsset
 {
     [FieldConvertToString(PlayableFieldEnum.Float)]
-    public float speed = 1.0f; 
+    private float speed = 1.0f;
     [FieldConvertToString(PlayableFieldEnum.String)]
-    public string text = "This is Test About CSharp Executed Lua Function";
+    private string text = "This is Test About CSharp Executed Lua Function";
     [FieldConvertToString(PlayableFieldEnum.Bool)]
-    public bool isPlay = true;
+    private bool isPlay = true;
     [FieldConvertToString(PlayableFieldEnum.GameObejct)]
-    public GameObject gameObject;
+    private GameObject preGameObject;
+    [FieldConvertToString(PlayableFieldEnum.Int)]
+    private int testNum = 1;
 
 
     public TextPlayAsset()

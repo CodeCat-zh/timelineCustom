@@ -17,8 +17,8 @@ public class SerachTimelineLua : MonoBehaviour
         {
             state = new LuaState();
             state.AddSearchPath(searchRootPath);
+            state.LuaPop(state.LuaGetTop());
         }
-        state.LuaPop(state.LuaGetTop());
         state.Require(type);
         var binder = new LuaFunctionBinder();
         var luaClip = state.GetTable(type);

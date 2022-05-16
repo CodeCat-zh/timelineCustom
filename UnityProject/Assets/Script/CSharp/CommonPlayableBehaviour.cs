@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Playables;
 
 namespace Cutscene
@@ -25,6 +26,7 @@ namespace Cutscene
                 for (int i = 0; i < parmaList.Count; i++)
                 {
                     args[i + 4] = parmaList[i];
+    
                 }
                 LuaFunctionCallBack.Invoke(behaviourPlayCallBack, args);
             }
@@ -60,7 +62,6 @@ namespace Cutscene
 
         private object[] GetParamArray(Playable playable,FrameData info)
         {
-            int paramCount = 4 + parmaList.Count;
             object[] args = new object[2];
             args[0] = playable;
             args[1] = info;

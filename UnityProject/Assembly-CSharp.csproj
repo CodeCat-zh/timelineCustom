@@ -220,7 +220,7 @@
     <Compile Include="Assets\Source\Generate\UnityEngine_SleepTimeoutWrap.cs" />
     <Compile Include="Assets\Source\Generate\UnityEngine_TrackedReferenceWrap.cs" />
     <Compile Include="Assets\Script\CSharp\LuaFunctionBinder.cs" />
-    <Compile Include="Assets\Script\CSharp\Annotation\ExportAB.cs" />
+    <Compile Include="Assets\Script\CSharp\Annotation\ExportABName.cs" />
     <Compile Include="Assets\Script\CSharp\Annotation\DecorateTrack.cs" />
     <Compile Include="Assets\Script\CSharp\LuaFunctionCallBack.cs" />
     <Compile Include="Assets\Script\CSharp\SerachTimelineLua.cs" />
