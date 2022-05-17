@@ -52,6 +52,7 @@
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_EventObject.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_Input.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaMethod.cs" />
+     <Compile Include="Assets\Script\CSharp\Editor\Windows\ResourceSearchWindows.cs" />
      <Compile Include="Assets\ToLua\Injection\Editor\ToluaInjectionBlackListPanel.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_String.cs" />
      <Compile Include="Assets\Editor\Custom\CustomSettings.cs" />
@@ -59,22 +60,21 @@
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_RectTransform.cs" />
      <Compile Include="Assets\ToLua\Editor\ToLuaTree.cs" />
      <Compile Include="Assets\ToLua\Editor\ToLuaMenu.cs" />
+     <Compile Include="Assets\Script\CSharp\Editor\IResourceItem.cs" />
+     <Compile Include="Assets\Script\CSharp\Editor\Windows\ResourcesSearch_TypeList.cs" />
      <Compile Include="Assets\ToLua\Injection\Editor\ToLuaInjectionHelper.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_Object.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaField.cs" />
+     <Compile Include="Assets\Script\CSharp\Editor\State\ResourceSearchState.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_UnityEngine_GameObject.cs" />
      <Compile Include="Assets\ToLua\Injection\Editor\CustomCecilRocks\MethodBodyRocks.cs" />
      <Compile Include="Assets\ToLua\Editor\ToLuaExport.cs" />
+     <Compile Include="Assets\Script\CSharp\Editor\Windows\ResourceSearch_Content.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaProperty.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_System_Delegate.cs" />
      <Compile Include="Assets\ToLua\Injection\Editor\ToLuaText.cs" />
      <Compile Include="Assets\ToLua\Editor\Extend\ToLua_LuaInterface_LuaConstructor.cs" />
      <Compile Include="Assets\ToLua\Injection\Editor\ToLuaInjection.cs" />
-     <Compile Include="Assets\Script\CSharp\Editor\Windows\ResourceSearchWindows.cs" />
-     <Compile Include="Assets\Script\CSharp\Editor\Windows\ResourcesSearch_TypeList.cs" />
-     <Compile Include="Assets\Script\CSharp\Editor\Windows\ResourceSearch_Content.cs" />
-     <Compile Include="Assets\Script\CSharp\Editor\IResourceItem.cs" />
-     <Compile Include="Assets\Script\CSharp\Editor\State\ResourceSearchState.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity 2020.3.29f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

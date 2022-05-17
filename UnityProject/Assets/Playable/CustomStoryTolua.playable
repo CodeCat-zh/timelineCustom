@@ -22,10 +22,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.43333333333333335
+    m_Start: 0.25
     m_ClipIn: 0
-    m_Asset: {fileID: -4393386222596094}
-    m_Duration: 3.45
+    m_Asset: {fileID: 2686356743181401984}
+    m_Duration: 5
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8949833403921384001}
     m_EaseInDuration: 0
@@ -91,10 +91,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TextPlayAsset
   - m_Version: 1
-    m_Start: 4.816666666666666
+    m_Start: 6.433333333333334
     m_ClipIn: 0
-    m_Asset: {fileID: 281229110975214587}
-    m_Duration: 3.45
+    m_Asset: {fileID: -1513125864174907636}
+    m_Duration: 5
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8949833403921384001}
     m_EaseInDuration: 0
@@ -161,7 +161,31 @@ MonoBehaviour:
     m_DisplayName: TextPlayAsset
   m_Markers:
     m_Objects: []
---- !u!114 &-4393386222596094
+--- !u!114 &-4257171903058276661
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93516953b936a054da6f1a239982e6ae, type: 3}
+  m_Name: Common Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
+  type: 
+--- !u!114 &-1513125864174907636
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,13 +195,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a50ddd9ebe574449dbbe41a5aacbda, type: 3}
-  m_Name: TextPlayAsset
+  m_Name: TextPlayAsset(Clone)(Clone)
   m_EditorClassIdentifier: 
-  speed: 1
-  text: This is Test About CSharp Executed Lua Function
+  speed: 3
+  text: This is
   isPlay: 1
   preGameObject: {fileID: 1963830774607520272, guid: 31989b6c971f76448903afb7fd738546, type: 3}
-  testNum: 15000
+  testNum: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,13 +217,14 @@ MonoBehaviour:
   m_Version: 0
   m_Tracks:
   - {fileID: -8949833403921384001}
+  - {fileID: -4257171903058276661}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 4606003497830927793}
---- !u!114 &281229110975214587
+--- !u!114 &2686356743181401984
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,13 +234,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a50ddd9ebe574449dbbe41a5aacbda, type: 3}
-  m_Name: TextPlayAsset(Clone)(Clone)
+  m_Name: TextPlayAsset
   m_EditorClassIdentifier: 
-  speed: 1
-  text: 11111111111111111111111111111111111111111111111111111111111111
+  speed: 2
+  text: This is Test About CSharp Executed Lua Function
   isPlay: 1
   preGameObject: {fileID: 1963830774607520272, guid: 31989b6c971f76448903afb7fd738546, type: 3}
-  testNum: 15000
+  testNum: 1
 --- !u!114 &4606003497830927793
 MonoBehaviour:
   m_ObjectHideFlags: 1

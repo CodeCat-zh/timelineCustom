@@ -8,14 +8,12 @@ namespace Cutscene
 {
     public class CommonPlayableAsset : PlayableAsset, ITimelineClipAsset
     {
-        protected string type;
-      
-        protected int id;
-       
-        protected List<string> paramList;
+        public string type;
+        public int id;
+        public List<string> paramList;
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
-            paramList = this.GetParamList();
+            paramList = GetParamList();
       
             return  CreateCommonPlayAsset(graph,owner, type,paramList);
         }
@@ -51,6 +49,8 @@ namespace Cutscene
 
             };
             var playable = ScriptPlayable<CommonPlayableBehaviour>.Create(graph, behaviourTemplate);
+            
+            
             return playable;
         }
 

@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class TimeLineUnities 
 {
@@ -14,18 +15,19 @@ public class TimeLineUnities
     {
         List<string> fieldList = new List<string>();
         Type type = commonPlayableAsset.GetType();
-        foreach(var prop in type.GetProperties())
+        FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        foreach (var prop in fields )
         {
-            Debug.Log(prop.Name);
+           
             object[] oAttributeArr = prop.GetCustomAttributes(typeof(FieldConvertToString), true);
             if (oAttributeArr.Length == 0) continue;
             foreach(FieldConvertToString field in oAttributeArr )
-             {
+            {
                 object value = prop.GetValue(commonPlayableAsset);
                 string convertResult = GetPropertyToString(field,value);
                 if ( field.FieldEnum == PlayableFieldEnum.GameObejct )
                 {
-                    string[] sArray = Regex.Split(convertResult, "|", RegexOptions.IgnoreCase);
+                    string[] sArray = Regex.Split(convertResult, "-", RegexOptions.IgnoreCase);
                     foreach( var str in sArray )
                     {
                         fieldList.Add(str);
@@ -41,7 +43,6 @@ public class TimeLineUnities
         return fieldList;
     }
 
-   
 
     private static string GetPropertyToString( FieldConvertToString fieldConvert,object value)
     {
@@ -81,8 +82,50 @@ public class TimeLineUnities
 
     }
 
-    public static void ConvertToCommonClipPlayable(Playable playable)
+    public static void ConvertToCommonPlayableAsset(TimelineAsset timelineAsset)
     {
-
+        var root = timelineAsset.GetOutputTracks();
+        TimelineAsset tmpTimeline = new TimelineAsset();
+        tmpTimeline.name = timelineAsset.name;
+        foreach(var track in root)
+        {
+            var newTrack = CovertToComonTrack(tmpTimeline, track);
+            timelineAsset.DeleteTrack(track);
+        }
+        timelineAsset = tmpTimeline;
     }
+
+    public static TrackAsset CovertToComonTrack(TimelineAsset timelineAsset,TrackAsset track)
+    {
+        var newTrack = timelineAsset.CreateTrack<CommonTrack>();
+        var clipRoot = track.GetClips();
+        foreach (var clip in clipRoot)
+        {
+            var newClip = newTrack.CreateClip<CommonPlayableAsset>();
+
+            Type type = clip.GetType();
+            Type newType = newClip.GetType();
+            FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            foreach (var prop in fields)
+            {
+                if (!prop.Name.Equals("asset"))
+                {
+                    var value = prop.GetValue(clip);
+                    newType.GetProperty(prop.Name).SetValue(newClip, value, null);
+                }
+            }
+
+            var asset = newClip.asset as CommonPlayableAsset;
+            var oldAsset = clip.asset as CommonPlayableAsset;
+            asset.type = oldAsset.type;
+            asset.id = oldAsset.id;
+            List<string> paramList = asset.GetParamList();
+            asset.paramList.AddRange(paramList);
+
+        }
+        return newTrack;
+    }
+
+
+
 }

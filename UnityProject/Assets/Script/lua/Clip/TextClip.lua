@@ -4,21 +4,16 @@ function TextClip:OnBehaviourPlay(args)
     self.id = args[1]
     self.playable = args[2]
     self.info = args[3]
-    self.parmaList ={}
+    self.paramList ={}
     local initPosIndex = 4
     for i = 0,args.Length - initPosIndex - 1  do
-        self.parmaList[i] = args[ i + initPosIndex ];
+       self.paramList[ i + 1 ] = args[ i + initPosIndex ]
     end
-    for _, v in pairs(self.parmaList) do
-       print(v)
-    end
-
-    print("OnBehaviourPlay")
 end
 
 
 function TextClip:OnBehaviourPause(args)
-
+  
 end
 
 function TextClip:PrepareFrame( args)

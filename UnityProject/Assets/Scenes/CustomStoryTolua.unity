@@ -758,6 +758,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7196040343851012830, guid: 31989b6c971f76448903afb7fd738546, type: 3}
+      propertyPath: m_Text
+      value: 454744112542542
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196040343851012830, guid: 31989b6c971f76448903afb7fd738546, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7196040343851012830, guid: 31989b6c971f76448903afb7fd738546, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31989b6c971f76448903afb7fd738546, type: 3}
 --- !u!1 &2146888072 stripped
