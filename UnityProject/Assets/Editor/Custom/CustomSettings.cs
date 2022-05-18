@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using LuaInterface;
 using UnityEditor;
-
+using Cutscene;
 using BindType = ToLuaMenu.BindType;
 using System.Reflection;
 
@@ -60,6 +60,22 @@ public static class CustomSettings
         _GT(typeof(LuaInjectionStation)),
         _GT(typeof(InjectType)),
         _GT(typeof(Debugger)).SetNameSpace(null),          
+
+
+        _GT(typeof(UnityEngine.Playables.FrameData)),
+        _GT(typeof(UnityEngine.Playables.Playable)),
+        _GT(typeof(UnityEngine.Playables.PlayableBehaviour)),
+        _GT(typeof(UnityEngine.Playables.PlayableDirector)),
+        _GT(typeof(UnityEngine.Playables.PlayableBinding)),
+        _GT(typeof(UnityEngine.Timeline.ClipCaps)),
+        _GT(typeof(UnityEngine.Timeline.TrackAsset)),
+        _GT(typeof(UnityEngine.Timeline.TimelinePlayable)),
+        _GT(typeof(UnityEngine.Timeline.TimelineAsset)),
+        _GT(typeof(Cutscene.ClipParam)),
+        _GT(typeof(Cutscene.CommonPlayableAsset)),
+        _GT(typeof(Cutscene.CommonPlayableBehaviour)),
+        _GT(typeof(Cutscene.CommonTrack)),
+        _GT(typeof(List<Cutscene.ClipParam>)),
 
 #if USING_DOTWEENING
         _GT(typeof(DG.Tweening.DOTween)),
@@ -174,6 +190,7 @@ public static class CustomSettings
         typeof(SkinWeights),
         typeof(RenderTexture),
         typeof(Rigidbody),
+        typeof(Cutscene.ClipParam),
     };
 
     //重载函数，相同参数个数，相同位置out参数匹配出问题时, 需要强制匹配解决

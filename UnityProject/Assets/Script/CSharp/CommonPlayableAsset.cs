@@ -10,7 +10,7 @@ namespace Cutscene
     {
         public string type;
         public int id;
-        public List<string> paramList;
+        public List<ClipParam> paramList;
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
             paramList = GetParamList();
@@ -18,7 +18,7 @@ namespace Cutscene
             return  CreateCommonPlayAsset(graph,owner, type,paramList);
         }
 
-        public static Playable CreateCommonPlayAsset(PlayableGraph graph,GameObject go,string type,List<string> paramList)
+        public static Playable CreateCommonPlayAsset(PlayableGraph graph,GameObject go,string type,List<ClipParam> paramList)
         {
             LuaFunctionCallBack behaviourPlayCallBack = null;
             LuaFunctionCallBack behaviourPauseCallBack = null;
@@ -62,7 +62,7 @@ namespace Cutscene
         public static int IdCounter { get; private set ; }
 
 
-        public virtual List<string> GetParamList()
+        public virtual List<ClipParam> GetParamList()
         {
             return TimeLineUnities.ConvertFieldToString(this);
         }

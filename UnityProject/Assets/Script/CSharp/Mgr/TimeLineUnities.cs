@@ -10,10 +10,10 @@ using UnityEngine.Timeline;
 
 public class TimeLineUnities 
 {
-    private string assetBundlePreName = "Asset";
-    public static List<string> ConvertFieldToString(CommonPlayableAsset commonPlayableAsset)
+    private static string assetBundlePreName = "";
+    public static List<ClipParam> ConvertFieldToString(CommonPlayableAsset commonPlayableAsset)
     {
-        List<string> fieldList = new List<string>();
+        List<ClipParam> fieldList = new List<ClipParam>();
         Type type = commonPlayableAsset.GetType();
         FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
         foreach (var prop in fields )
@@ -24,18 +24,9 @@ public class TimeLineUnities
             foreach(FieldConvertToString field in oAttributeArr )
             {
                 object value = prop.GetValue(commonPlayableAsset);
-                string convertResult = GetPropertyToString(field,value);
-                if ( field.FieldEnum == PlayableFieldEnum.GameObejct )
-                {
-                    string[] sArray = Regex.Split(convertResult, "-", RegexOptions.IgnoreCase);
-                    foreach( var str in sArray )
-                    {
-                        fieldList.Add(str);
-                    }
-                }
-                else {
-                    fieldList.Add(convertResult);
-                }
+
+                ClipParam convertResult = GetPropertyToString(field,value,prop.Name);
+                fieldList.Add(convertResult);
                 break;
              }
 
@@ -44,16 +35,14 @@ public class TimeLineUnities
     }
 
 
-    private static string GetPropertyToString( FieldConvertToString fieldConvert,object value)
+    private static ClipParam GetPropertyToString( FieldConvertToString fieldConvert,object value,string name)
     {
-        string result = "";
+        string result="";
         switch (fieldConvert.FieldEnum)
         {
             case PlayableFieldEnum.GameObejct:
                 GameObject gameObject = (GameObject)value;
-                string path = UnityEditor.PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(gameObject).ToLower();
-                string name = gameObject.name.ToLower();
-                result = path +"-"+ name;
+                result = UnityEditor.PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(gameObject);
                 break;
             case PlayableFieldEnum.Enum:
                 result = Convert.ToString((int)value);
@@ -73,7 +62,8 @@ public class TimeLineUnities
             default:
                 break;
         }
-        return result;
+
+        return new ClipParam(name,result);
     }
 
 
@@ -119,7 +109,7 @@ public class TimeLineUnities
             var oldAsset = clip.asset as CommonPlayableAsset;
             asset.type = oldAsset.type;
             asset.id = oldAsset.id;
-            List<string> paramList = asset.GetParamList();
+            List<ClipParam> paramList = asset.GetParamList();
             asset.paramList.AddRange(paramList);
 
         }
