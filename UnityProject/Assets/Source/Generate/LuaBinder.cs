@@ -16,6 +16,7 @@ public static class LuaBinder
 		LuaInterface_InjectTypeWrap.Register(L);
 		L.EndModule();
 		L.BeginModule("UnityEngine");
+		UnityEngine_CanvasWrap.Register(L);
 		UnityEngine_ComponentWrap.Register(L);
 		UnityEngine_TransformWrap.Register(L);
 		UnityEngine_MaterialWrap.Register(L);
@@ -57,6 +58,28 @@ public static class LuaBinder
 		UnityEngine_ResourcesWrap.Register(L);
 		UnityEngine_ScriptableObjectWrap.Register(L);
 		UnityEngine_AudioBehaviourWrap.Register(L);
+		L.BeginModule("UI");
+		UnityEngine_UI_ButtonWrap.Register(L);
+		UnityEngine_UI_TextWrap.Register(L);
+		UnityEngine_UI_ImageWrap.Register(L);
+		UnityEngine_UI_SliderWrap.Register(L);
+		UnityEngine_UI_ScrollRectWrap.Register(L);
+		UnityEngine_UI_DropdownWrap.Register(L);
+		UnityEngine_UI_InputFieldWrap.Register(L);
+		UnityEngine_UI_RectMask2DWrap.Register(L);
+		UnityEngine_UI_MaskWrap.Register(L);
+		UnityEngine_UI_ScrollbarWrap.Register(L);
+		UnityEngine_UI_GraphicWrap.Register(L);
+		UnityEngine_UI_SelectableWrap.Register(L);
+		UnityEngine_UI_MaskableGraphicWrap.Register(L);
+		L.BeginModule("InputField");
+		L.RegFunction("OnValidateInput", UnityEngine_UI_InputField_OnValidateInput);
+		L.EndModule();
+		L.EndModule();
+		L.BeginModule("EventSystems");
+		UnityEngine_EventSystems_EventSystemWrap.Register(L);
+		UnityEngine_EventSystems_UIBehaviourWrap.Register(L);
+		L.EndModule();
 		L.BeginModule("Playables");
 		UnityEngine_Playables_FrameDataWrap.Register(L);
 		UnityEngine_Playables_PlayableWrap.Register(L);
@@ -73,6 +96,9 @@ public static class LuaBinder
 		L.EndModule();
 		L.BeginModule("Events");
 		L.RegFunction("UnityAction", UnityEngine_Events_UnityAction);
+		L.EndModule();
+		L.BeginModule("Canvas");
+		L.RegFunction("WillRenderCanvases", UnityEngine_Canvas_WillRenderCanvases);
 		L.EndModule();
 		L.BeginModule("Camera");
 		L.RegFunction("CameraCallback", UnityEngine_Camera_CameraCallback);
@@ -118,9 +144,35 @@ public static class LuaBinder
 		L.AddPreLoad("UnityEngine.SkinWeights", LuaOpen_UnityEngine_SkinWeights, typeof(UnityEngine.SkinWeights));
 		L.AddPreLoad("UnityEngine.RenderTexture", LuaOpen_UnityEngine_RenderTexture, typeof(UnityEngine.RenderTexture));
 		L.AddPreLoad("UnityEngine.Rigidbody", LuaOpen_UnityEngine_Rigidbody, typeof(UnityEngine.Rigidbody));
-		L.AddPreLoad("Cutscene.ClipParam", LuaOpen_Cutscene_ClipParam, typeof(Cutscene.ClipParam));
 		L.EndPreLoad();
 		Debugger.Log("Register lua type cost time: {0}", Time.realtimeSinceStartup - t);
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int UnityEngine_UI_InputField_OnValidateInput(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<UnityEngine.UI.InputField.OnValidateInput>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<UnityEngine.UI.InputField.OnValidateInput>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
@@ -140,6 +192,33 @@ public static class LuaBinder
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
 				Delegate arg1 = DelegateTraits<UnityEngine.Events.UnityAction>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int UnityEngine_Canvas_WillRenderCanvases(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<UnityEngine.Canvas.WillRenderCanvases>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<UnityEngine.Canvas.WillRenderCanvases>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;
@@ -789,24 +868,6 @@ public static class LuaBinder
 			state.BeginPreModule("UnityEngine");
 			UnityEngine_RigidbodyWrap.Register(state);
 			int reference = state.GetMetaReference(typeof(UnityEngine.Rigidbody));
-			state.EndPreModule(L, reference);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int LuaOpen_Cutscene_ClipParam(IntPtr L)
-	{
-		try
-		{
-			LuaState state = LuaState.Get(L);
-			state.BeginPreModule("Cutscene");
-			Cutscene_ClipParamWrap.Register(state);
-			int reference = state.GetMetaReference(typeof(Cutscene.ClipParam));
 			state.EndPreModule(L, reference);
 			return 1;
 		}

@@ -11,15 +11,15 @@ namespace Cutscene
         public LuaFunctionCallBack behaviourPauseCallBack;
         public LuaFunctionCallBack prepareFrameCallBack;
         public LuaFunctionCallBack processFrameCallBack;
-        public List<ClipParam> parmaList;
+        public List<string> parmaList;
         public int id;
         public string type;
         public override void OnBehaviourPlay(Playable playable, FrameData info)
         {
             if ( behaviourPlayCallBack != null )
             {
-                parmaList.Add(new ClipParam("type", type));
-                parmaList.Add(new ClipParam("id",Convert.ToString(id)));
+                parmaList.Add(type);
+                parmaList.Add(Convert.ToString(id));
                 LuaFunctionCallBack.Invoke(behaviourPlayCallBack, playable,info,parmaList);
             }
         }
@@ -31,7 +31,6 @@ namespace Cutscene
                 LuaFunctionCallBack.Invoke(behaviourPauseCallBack, playable, info);
             }
         }
-
         public override void PrepareFrame(Playable playable, FrameData info)
         {
             if (prepareFrameCallBack != null)
@@ -47,6 +46,6 @@ namespace Cutscene
                 LuaFunctionCallBack.Invoke(behaviourPauseCallBack, playable, info);
             }
         }
-       
+      
     }
 }

@@ -8,12 +8,12 @@ namespace Cutscene
     {
         public string fieldName;
         public string value;
-
         public ClipParam(string fieldName, string value)
         {
             this.fieldName = fieldName;
             this.value = value;
         }
+
     }
 
 }

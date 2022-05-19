@@ -205,7 +205,7 @@ public class Cutscene_CommonPlayableBehaviourWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			Cutscene.CommonPlayableBehaviour obj = (Cutscene.CommonPlayableBehaviour)o;
-			System.Collections.Generic.List<Cutscene.ClipParam> ret = obj.parmaList;
+			System.Collections.Generic.List<string> ret = obj.parmaList;
 			ToLua.PushSealed(L, ret);
 			return 1;
 		}
@@ -338,7 +338,7 @@ public class Cutscene_CommonPlayableBehaviourWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			Cutscene.CommonPlayableBehaviour obj = (Cutscene.CommonPlayableBehaviour)o;
-			System.Collections.Generic.List<Cutscene.ClipParam> arg0 = (System.Collections.Generic.List<Cutscene.ClipParam>)ToLua.CheckObject(L, 2, typeof(System.Collections.Generic.List<Cutscene.ClipParam>));
+			System.Collections.Generic.List<string> arg0 = (System.Collections.Generic.List<string>)ToLua.CheckObject(L, 2, typeof(System.Collections.Generic.List<string>));
 			obj.parmaList = arg0;
 			return 0;
 		}

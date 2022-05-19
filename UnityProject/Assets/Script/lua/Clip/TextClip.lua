@@ -1,34 +1,32 @@
+require("Mgr.LoadAssetMgr")
 
 TextClip = {}
 function TextClip:OnBehaviourPlay(playable,info,paramList)
-
     self.playable = playable
     self.info = info
     self.paramList ={}
-    for i = 0 ,paramList.Length - 1  do
-        local clipParam = paramList[i]
-        print(vardump(clipParam))
-        self.paramList[ clipParam.fieldName] = clipParam.value
+    self.preGameObjectPath = paramList[0]
+    self.speed = paramList[1]
+    self.signText = paramList[2]
+    self.isPlay = paramList[3]
+    self.testNum = paramList[4]
+    self.type = paramList[5]
+    self.id = paramList[6]
+    self.chatView = LoadAssetMgr.FindOrInstanceGameObject(self.preGameObjectPath)
+    print(self.chatView == nil)
+    if self.chatView then
+        self.text = self.chatView.Find('Panel/bg/text'):GetComponent(typeof(UnityEngine.UI.Text))
+        self.colorText = self.chatView.Find('Panel/bg/mask/colorText'):GetComponent(typeof(UnityEngine.UI.Text))
+        self.mask = self.chatView.Find('Panel/bg/mask')
+        self.text.text = self.signText
+        self.colorText.text = self.signText
     end
-    local path = self.paramList.preGameObject
-    self.chatView = LoadAssetMgr.FindOrInstanceGameObject(path)
-    self.text = self.chatView.Find('Panel/bg/text').GetComponent(typeof(UnityEngine.Text))
-    self.colorText = self.chatView.Find('Panel/bg/text').GetComponent(typeof(UnityEngine.Text))
-    self.text.text = self.paramList.text
-    self.colorText.text = self.paramList.text
-end
-
-
-function TextClip:OnBehaviourPause(playable,info)
-
-end
-
-function TextClip:PrepareFrame( playable,info)
-
 end
 
 function TextClip:ProcessFrame(playable,info)
-
+    local progress = playable.GetTime() / playable.GetDuration()
+    local currentWeight = self.colorText.preferredWidth * progress
+    self.mask.rectTransform.sizeDelta =Vector2(0,currentWeight)
 end
 
 function vardump(value, depth, key)

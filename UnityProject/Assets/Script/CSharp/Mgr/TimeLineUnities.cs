@@ -3,17 +3,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.Timeline;
-
 public class TimeLineUnities 
 {
     private static string assetBundlePreName = "";
-    public static List<ClipParam> ConvertFieldToString(CommonPlayableAsset commonPlayableAsset)
+    public static List<string> ConvertFieldToString(CommonPlayableAsset commonPlayableAsset)
     {
-        List<ClipParam> fieldList = new List<ClipParam>();
+        List<string> fieldList = new List<string>();
         Type type = commonPlayableAsset.GetType();
         FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
         foreach (var prop in fields )
@@ -25,7 +22,7 @@ public class TimeLineUnities
             {
                 object value = prop.GetValue(commonPlayableAsset);
 
-                ClipParam convertResult = GetPropertyToString(field,value,prop.Name);
+                string convertResult = GetPropertyToString(field,value,prop.Name);
                 fieldList.Add(convertResult);
                 break;
              }
@@ -35,7 +32,7 @@ public class TimeLineUnities
     }
 
 
-    private static ClipParam GetPropertyToString( FieldConvertToString fieldConvert,object value,string name)
+    private static string GetPropertyToString( FieldConvertToString fieldConvert,object value,string name)
     {
         string result="";
         switch (fieldConvert.FieldEnum)
@@ -63,7 +60,7 @@ public class TimeLineUnities
                 break;
         }
 
-        return new ClipParam(name,result);
+        return result;
     }
 
 
@@ -109,7 +106,7 @@ public class TimeLineUnities
             var oldAsset = clip.asset as CommonPlayableAsset;
             asset.type = oldAsset.type;
             asset.id = oldAsset.id;
-            List<ClipParam> paramList = asset.GetParamList();
+            List<string> paramList = asset.GetParamList();
             asset.paramList.AddRange(paramList);
 
         }

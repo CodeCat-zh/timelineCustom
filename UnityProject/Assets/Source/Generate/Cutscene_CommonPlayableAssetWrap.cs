@@ -73,7 +73,7 @@ public class Cutscene_CommonPlayableAssetWrap
 			UnityEngine.Playables.PlayableGraph arg0 = StackTraits<UnityEngine.Playables.PlayableGraph>.Check(L, 1);
 			UnityEngine.GameObject arg1 = (UnityEngine.GameObject)ToLua.CheckObject(L, 2, typeof(UnityEngine.GameObject));
 			string arg2 = ToLua.CheckString(L, 3);
-			System.Collections.Generic.List<Cutscene.ClipParam> arg3 = (System.Collections.Generic.List<Cutscene.ClipParam>)ToLua.CheckObject(L, 4, typeof(System.Collections.Generic.List<Cutscene.ClipParam>));
+			System.Collections.Generic.List<string> arg3 = (System.Collections.Generic.List<string>)ToLua.CheckObject(L, 4, typeof(System.Collections.Generic.List<string>));
 			UnityEngine.Playables.Playable o = Cutscene.CommonPlayableAsset.CreateCommonPlayAsset(arg0, arg1, arg2, arg3);
 			ToLua.PushValue(L, o);
 			return 1;
@@ -91,7 +91,7 @@ public class Cutscene_CommonPlayableAssetWrap
 		{
 			ToLua.CheckArgsCount(L, 1);
 			Cutscene.CommonPlayableAsset obj = (Cutscene.CommonPlayableAsset)ToLua.CheckObject<Cutscene.CommonPlayableAsset>(L, 1);
-			System.Collections.Generic.List<Cutscene.ClipParam> o = obj.GetParamList();
+			System.Collections.Generic.List<string> o = obj.GetParamList();
 			ToLua.PushSealed(L, o);
 			return 1;
 		}
@@ -166,7 +166,7 @@ public class Cutscene_CommonPlayableAssetWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			Cutscene.CommonPlayableAsset obj = (Cutscene.CommonPlayableAsset)o;
-			System.Collections.Generic.List<Cutscene.ClipParam> ret = obj.paramList;
+			System.Collections.Generic.List<string> ret = obj.paramList;
 			ToLua.PushSealed(L, ret);
 			return 1;
 		}
@@ -256,7 +256,7 @@ public class Cutscene_CommonPlayableAssetWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			Cutscene.CommonPlayableAsset obj = (Cutscene.CommonPlayableAsset)o;
-			System.Collections.Generic.List<Cutscene.ClipParam> arg0 = (System.Collections.Generic.List<Cutscene.ClipParam>)ToLua.CheckObject(L, 2, typeof(System.Collections.Generic.List<Cutscene.ClipParam>));
+			System.Collections.Generic.List<string> arg0 = (System.Collections.Generic.List<string>)ToLua.CheckObject(L, 2, typeof(System.Collections.Generic.List<string>));
 			obj.paramList = arg0;
 			return 0;
 		}
