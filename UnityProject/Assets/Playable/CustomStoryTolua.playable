@@ -22,7 +22,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 1.45
+    m_Start: 0.48333333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 2686356743181401984}
     m_Duration: 5
@@ -91,7 +91,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: TextPlayAsset
   - m_Version: 1
-    m_Start: 7.1
+    m_Start: 6.2
     m_ClipIn: 0
     m_Asset: {fileID: -1513125864174907636}
     m_Duration: 5.5
@@ -178,12 +178,12 @@ MonoBehaviour:
   paramList:
   - Assets/Resources/ChatView.prefab
   - 3
-  - This is
+  - Sign sing  sing
   - true
   - 4
-  preGameObject: {fileID: 1963830774607520272, guid: 31989b6c971f76448903afb7fd738546, type: 3}
+  preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
   speed: 3
-  text: This is
+  text: Sign sing  sing
   isPlay: 1
   testNum: 4
 --- !u!114 &11400000
@@ -224,12 +224,12 @@ MonoBehaviour:
   paramList:
   - Assets/Resources/ChatView.prefab
   - 2
-  - 111111111111
+  - 222222222222222
   - true
   - 1
-  preGameObject: {fileID: 1963830774607520272, guid: 31989b6c971f76448903afb7fd738546, type: 3}
+  preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
   speed: 2
-  text: 111111111111
+  text: 222222222222222
   isPlay: 1
   testNum: 1
 --- !u!114 &4606003497830927793

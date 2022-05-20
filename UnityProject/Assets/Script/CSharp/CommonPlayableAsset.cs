@@ -35,6 +35,7 @@ namespace Cutscene
                 behaviourPauseCallBack = binder.BehaviourPauseCallBack;
                 prepareFrameCallBack = binder.PrepareFrameCallBack;
                 processFrameCallBack = binder.ProcessFrameCallBack;
+                Debug.Log(prepareFrameCallBack.luaFunction == null);
             }
 
             CommonPlayableBehaviour behaviourTemplate = new CommonPlayableBehaviour

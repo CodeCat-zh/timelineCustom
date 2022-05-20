@@ -13,22 +13,29 @@ function TextClip:OnBehaviourPlay(playable,info,paramList)
     self.type = paramList[5]
     self.id = paramList[6]
     self.chatView = LoadAssetMgr.FindOrInstanceGameObject(self.preGameObjectPath)
-    print(self.chatView == nil)
     if self.chatView then
-        self.text = self.chatView.Find('Panel/bg/text'):GetComponent(typeof(UnityEngine.UI.Text))
-        self.colorText = self.chatView.Find('Panel/bg/mask/colorText'):GetComponent(typeof(UnityEngine.UI.Text))
+        self.text = self.chatView.Find('Panel/bg/text'):GetComponent(typeof(TMPro.TMP_Text))
+        self.colorText = self.chatView.Find('Panel/bg/mask/colorText'):GetComponent(typeof(TMPro.TMP_Text))
         self.mask = self.chatView.Find('Panel/bg/mask')
         self.text.text = self.signText
         self.colorText.text = self.signText
     end
 end
 
-function TextClip:ProcessFrame(playable,info)
-    local progress = playable.GetTime() / playable.GetDuration()
+function TextClip:ProcessFrame(playable,info,bingGameObject)
+    print("ProcessFrame")
+    local progress = playable:GetTime() / playable:GetDuration()
+    print(progress,playable:GetTime(),playable:GetDuration())
     local currentWeight = self.colorText.preferredWidth * progress
-    self.mask.rectTransform.sizeDelta =Vector2(0,currentWeight)
+    local height = self.colorText.preferredHeight
+    self.mask.rectTransform.sizeDelta =Vector2(currentWeight,height)
 end
-
+function TextClip:OnBehaviourPause()
+    print("OnBehaviourPause")
+end
+function TextClip:PrepareFrame()
+    print("PrepareFrame")
+end
 function vardump(value, depth, key)
     local linePrefix = ""
     local spaces = ""

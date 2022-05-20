@@ -36,6 +36,9 @@ public class DelegateFactory
 		dict.Add(typeof(UnityEngine.AudioClip.PCMReaderCallback), factory.UnityEngine_AudioClip_PCMReaderCallback);
 		dict.Add(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), factory.UnityEngine_AudioClip_PCMSetPositionCallback);
 		dict.Add(typeof(System.Action<UnityEngine.AsyncOperation>), factory.System_Action_UnityEngine_AsyncOperation);
+		dict.Add(typeof(System.Action<TMPro.TMP_TextInfo>), factory.System_Action_TMPro_TMP_TextInfo);
+		dict.Add(typeof(System.Func<int,string,TMPro.TMP_FontAsset>), factory.System_Func_int_string_TMPro_TMP_FontAsset);
+		dict.Add(typeof(System.Func<int,string,TMPro.TMP_SpriteAsset>), factory.System_Func_int_string_TMPro_TMP_SpriteAsset);
 
 		DelegateTraits<System.Action>.Init(factory.System_Action);
 		DelegateTraits<UnityEngine.Events.UnityAction>.Init(factory.UnityEngine_Events_UnityAction);
@@ -56,6 +59,9 @@ public class DelegateFactory
 		DelegateTraits<UnityEngine.AudioClip.PCMReaderCallback>.Init(factory.UnityEngine_AudioClip_PCMReaderCallback);
 		DelegateTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Init(factory.UnityEngine_AudioClip_PCMSetPositionCallback);
 		DelegateTraits<System.Action<UnityEngine.AsyncOperation>>.Init(factory.System_Action_UnityEngine_AsyncOperation);
+		DelegateTraits<System.Action<TMPro.TMP_TextInfo>>.Init(factory.System_Action_TMPro_TMP_TextInfo);
+		DelegateTraits<System.Func<int,string,TMPro.TMP_FontAsset>>.Init(factory.System_Func_int_string_TMPro_TMP_FontAsset);
+		DelegateTraits<System.Func<int,string,TMPro.TMP_SpriteAsset>>.Init(factory.System_Func_int_string_TMPro_TMP_SpriteAsset);
 
 		TypeTraits<System.Action>.Init(factory.Check_System_Action);
 		TypeTraits<UnityEngine.Events.UnityAction>.Init(factory.Check_UnityEngine_Events_UnityAction);
@@ -76,6 +82,9 @@ public class DelegateFactory
 		TypeTraits<UnityEngine.AudioClip.PCMReaderCallback>.Init(factory.Check_UnityEngine_AudioClip_PCMReaderCallback);
 		TypeTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Init(factory.Check_UnityEngine_AudioClip_PCMSetPositionCallback);
 		TypeTraits<System.Action<UnityEngine.AsyncOperation>>.Init(factory.Check_System_Action_UnityEngine_AsyncOperation);
+		TypeTraits<System.Action<TMPro.TMP_TextInfo>>.Init(factory.Check_System_Action_TMPro_TMP_TextInfo);
+		TypeTraits<System.Func<int,string,TMPro.TMP_FontAsset>>.Init(factory.Check_System_Func_int_string_TMPro_TMP_FontAsset);
+		TypeTraits<System.Func<int,string,TMPro.TMP_SpriteAsset>>.Init(factory.Check_System_Func_int_string_TMPro_TMP_SpriteAsset);
 
 		StackTraits<System.Action>.Push = factory.Push_System_Action;
 		StackTraits<UnityEngine.Events.UnityAction>.Push = factory.Push_UnityEngine_Events_UnityAction;
@@ -96,6 +105,9 @@ public class DelegateFactory
 		StackTraits<UnityEngine.AudioClip.PCMReaderCallback>.Push = factory.Push_UnityEngine_AudioClip_PCMReaderCallback;
 		StackTraits<UnityEngine.AudioClip.PCMSetPositionCallback>.Push = factory.Push_UnityEngine_AudioClip_PCMSetPositionCallback;
 		StackTraits<System.Action<UnityEngine.AsyncOperation>>.Push = factory.Push_System_Action_UnityEngine_AsyncOperation;
+		StackTraits<System.Action<TMPro.TMP_TextInfo>>.Push = factory.Push_System_Action_TMPro_TMP_TextInfo;
+		StackTraits<System.Func<int,string,TMPro.TMP_FontAsset>>.Push = factory.Push_System_Func_int_string_TMPro_TMP_FontAsset;
+		StackTraits<System.Func<int,string,TMPro.TMP_SpriteAsset>>.Push = factory.Push_System_Func_int_string_TMPro_TMP_SpriteAsset;
 	}
     
     public static Delegate CreateDelegate(Type t, LuaFunction func = null)
@@ -1302,6 +1314,189 @@ public class DelegateFactory
 	}
 
 	void Push_System_Action_UnityEngine_AsyncOperation(IntPtr L, System.Action<UnityEngine.AsyncOperation> o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Action_TMPro_TMP_TextInfo_Event : LuaDelegate
+	{
+		public System_Action_TMPro_TMP_TextInfo_Event(LuaFunction func) : base(func) { }
+		public System_Action_TMPro_TMP_TextInfo_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call(TMPro.TMP_TextInfo param0)
+		{
+			func.BeginPCall();
+			func.PushObject(param0);
+			func.PCall();
+			func.EndPCall();
+		}
+
+		public void CallWithSelf(TMPro.TMP_TextInfo param0)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.PushObject(param0);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public System.Action<TMPro.TMP_TextInfo> System_Action_TMPro_TMP_TextInfo(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Action<TMPro.TMP_TextInfo> fn = delegate(TMPro.TMP_TextInfo param0) { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Action_TMPro_TMP_TextInfo_Event target = new System_Action_TMPro_TMP_TextInfo_Event(func);
+			System.Action<TMPro.TMP_TextInfo> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Action_TMPro_TMP_TextInfo_Event target = new System_Action_TMPro_TMP_TextInfo_Event(func, self);
+			System.Action<TMPro.TMP_TextInfo> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Action_TMPro_TMP_TextInfo(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Action<TMPro.TMP_TextInfo>), L, pos);
+	}
+
+	void Push_System_Action_TMPro_TMP_TextInfo(IntPtr L, System.Action<TMPro.TMP_TextInfo> o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Func_int_string_TMPro_TMP_FontAsset_Event : LuaDelegate
+	{
+		public System_Func_int_string_TMPro_TMP_FontAsset_Event(LuaFunction func) : base(func) { }
+		public System_Func_int_string_TMPro_TMP_FontAsset_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public TMPro.TMP_FontAsset Call(int param0, string param1)
+		{
+			func.BeginPCall();
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			TMPro.TMP_FontAsset ret = (TMPro.TMP_FontAsset)func.CheckObject(typeof(TMPro.TMP_FontAsset));
+			func.EndPCall();
+			return ret;
+		}
+
+		public TMPro.TMP_FontAsset CallWithSelf(int param0, string param1)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			TMPro.TMP_FontAsset ret = (TMPro.TMP_FontAsset)func.CheckObject(typeof(TMPro.TMP_FontAsset));
+			func.EndPCall();
+			return ret;
+		}
+	}
+
+	public System.Func<int,string,TMPro.TMP_FontAsset> System_Func_int_string_TMPro_TMP_FontAsset(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Func<int,string,TMPro.TMP_FontAsset> fn = delegate(int param0, string param1) { return null; };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Func_int_string_TMPro_TMP_FontAsset_Event target = new System_Func_int_string_TMPro_TMP_FontAsset_Event(func);
+			System.Func<int,string,TMPro.TMP_FontAsset> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Func_int_string_TMPro_TMP_FontAsset_Event target = new System_Func_int_string_TMPro_TMP_FontAsset_Event(func, self);
+			System.Func<int,string,TMPro.TMP_FontAsset> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Func_int_string_TMPro_TMP_FontAsset(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Func<int,string,TMPro.TMP_FontAsset>), L, pos);
+	}
+
+	void Push_System_Func_int_string_TMPro_TMP_FontAsset(IntPtr L, System.Func<int,string,TMPro.TMP_FontAsset> o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class System_Func_int_string_TMPro_TMP_SpriteAsset_Event : LuaDelegate
+	{
+		public System_Func_int_string_TMPro_TMP_SpriteAsset_Event(LuaFunction func) : base(func) { }
+		public System_Func_int_string_TMPro_TMP_SpriteAsset_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public TMPro.TMP_SpriteAsset Call(int param0, string param1)
+		{
+			func.BeginPCall();
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			TMPro.TMP_SpriteAsset ret = (TMPro.TMP_SpriteAsset)func.CheckObject(typeof(TMPro.TMP_SpriteAsset));
+			func.EndPCall();
+			return ret;
+		}
+
+		public TMPro.TMP_SpriteAsset CallWithSelf(int param0, string param1)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.Push(param0);
+			func.Push(param1);
+			func.PCall();
+			TMPro.TMP_SpriteAsset ret = (TMPro.TMP_SpriteAsset)func.CheckObject(typeof(TMPro.TMP_SpriteAsset));
+			func.EndPCall();
+			return ret;
+		}
+	}
+
+	public System.Func<int,string,TMPro.TMP_SpriteAsset> System_Func_int_string_TMPro_TMP_SpriteAsset(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Func<int,string,TMPro.TMP_SpriteAsset> fn = delegate(int param0, string param1) { return null; };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Func_int_string_TMPro_TMP_SpriteAsset_Event target = new System_Func_int_string_TMPro_TMP_SpriteAsset_Event(func);
+			System.Func<int,string,TMPro.TMP_SpriteAsset> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Func_int_string_TMPro_TMP_SpriteAsset_Event target = new System_Func_int_string_TMPro_TMP_SpriteAsset_Event(func, self);
+			System.Func<int,string,TMPro.TMP_SpriteAsset> d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_System_Func_int_string_TMPro_TMP_SpriteAsset(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(System.Func<int,string,TMPro.TMP_SpriteAsset>), L, pos);
+	}
+
+	void Push_System_Func_int_string_TMPro_TMP_SpriteAsset(IntPtr L, System.Func<int,string,TMPro.TMP_SpriteAsset> o)
 	{
 		ToLua.Push(L, o);
 	}

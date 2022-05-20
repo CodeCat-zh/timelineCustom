@@ -17,5 +17,4 @@ public class AudioPlayableAsset : CommonPlayableAsset
         this.type = "AudioClip";
     }
 
-
 }

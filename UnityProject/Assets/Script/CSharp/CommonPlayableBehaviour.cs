@@ -36,7 +36,7 @@ namespace Cutscene
         {
             if (prepareFrameCallBack != null)
             {
-                LuaFunctionCallBack.Invoke(behaviourPauseCallBack, playable, info);
+                LuaFunctionCallBack.Invoke(prepareFrameCallBack, playable, info);
             }
         }
 
@@ -44,7 +44,7 @@ namespace Cutscene
         {
             if (processFrameCallBack != null)
             {
-                LuaFunctionCallBack.Invoke(behaviourPauseCallBack, playable, info,playerData);
+                LuaFunctionCallBack.Invoke(processFrameCallBack, playable, info,playerData);
             }
         }
       

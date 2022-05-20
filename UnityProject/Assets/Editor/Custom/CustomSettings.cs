@@ -5,6 +5,7 @@ using UnityEditor;
 using BindType = ToLuaMenu.BindType;
 using System.Reflection;
 using System.Collections.Generic;
+using TMPro;
 
 public static class CustomSettings
 {
@@ -179,6 +180,8 @@ public static class CustomSettings
         _GT(typeof(SkinWeights)),           
         _GT(typeof(RenderTexture)),
         _GT(typeof(Resources)),     
+        _GT(typeof(TextMeshPro)), 
+        _GT(typeof(TMP_Text)),
         _GT(typeof(LuaProfiler)),
     };
 

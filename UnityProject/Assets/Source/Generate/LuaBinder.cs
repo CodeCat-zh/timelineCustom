@@ -118,6 +118,10 @@ public static class LuaBinder
 		Cutscene_CommonPlayableBehaviourWrap.Register(L);
 		Cutscene_CommonTrackWrap.Register(L);
 		L.EndModule();
+		L.BeginModule("TMPro");
+		TMPro_TextMeshProWrap.Register(L);
+		TMPro_TMP_TextWrap.Register(L);
+		L.EndModule();
 		L.BeginModule("System");
 		L.RegFunction("Action", System_Action);
 		L.RegFunction("Predicate_int", System_Predicate_int);
@@ -129,6 +133,9 @@ public static class LuaBinder
 		L.RegFunction("Action_string", System_Action_string);
 		L.RegFunction("Func_bool", System_Func_bool);
 		L.RegFunction("Action_UnityEngine_AsyncOperation", System_Action_UnityEngine_AsyncOperation);
+		L.RegFunction("Action_TMPro_TMP_TextInfo", System_Action_TMPro_TMP_TextInfo);
+		L.RegFunction("Func_int_string_TMPro_TMP_FontAsset", System_Func_int_string_TMPro_TMP_FontAsset);
+		L.RegFunction("Func_int_string_TMPro_TMP_SpriteAsset", System_Func_int_string_TMPro_TMP_SpriteAsset);
 		L.EndModule();
 		L.EndModule();
 		L.BeginPreLoad();
@@ -651,6 +658,87 @@ public static class LuaBinder
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
 				Delegate arg1 = DelegateTraits<System.Action<UnityEngine.AsyncOperation>>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int System_Action_TMPro_TMP_TextInfo(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<System.Action<TMPro.TMP_TextInfo>>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<System.Action<TMPro.TMP_TextInfo>>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int System_Func_int_string_TMPro_TMP_FontAsset(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<System.Func<int,string,TMPro.TMP_FontAsset>>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<System.Func<int,string,TMPro.TMP_FontAsset>>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int System_Func_int_string_TMPro_TMP_SpriteAsset(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<System.Func<int,string,TMPro.TMP_SpriteAsset>>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<System.Func<int,string,TMPro.TMP_SpriteAsset>>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;

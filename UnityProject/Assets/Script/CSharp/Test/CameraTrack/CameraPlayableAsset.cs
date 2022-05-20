@@ -12,10 +12,10 @@ public class CameraPlayableAsset : CommonPlayableAsset
     public Vector3 cameraRota;
     [FieldConvertToString(PlayableFieldEnum.Float)]
     public float speed;
-
-
     public CameraPlayableAsset()
     {
         this.type = "CameraClip";
     }
+
+
 }

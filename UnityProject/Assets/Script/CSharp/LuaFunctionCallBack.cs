@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 
 public class LuaFunctionCallBack
 {
-    private  LuaFunction luaFunction;
+    public LuaFunction luaFunction;
     private LuaTable luaTable;
     public LuaFunctionCallBack(LuaFunction luaFunction, LuaTable luaTable)
     {
@@ -40,7 +40,6 @@ public class LuaFunctionCallBack
     public static void Invoke(LuaFunctionCallBack callBack, Playable playable, FrameData info, object o)
     {
         LuaFunction luaFunction = callBack.luaFunction;
-
         if (luaFunction != null)
         {
             //List自定义的类型无法获取，对应的键值，按照网上的教程都试了一遍，在导出文件中_GT(Typeof(List<ClipParam>)，
