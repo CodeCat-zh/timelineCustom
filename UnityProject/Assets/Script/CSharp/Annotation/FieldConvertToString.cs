@@ -8,6 +8,8 @@ public enum PlayableFieldEnum
     Int,
     Float,
     String,
+    Vector3,
+    Color
 }
 [AttributeUsage(AttributeTargets.Field)]
 public class FieldConvertToString : Attribute

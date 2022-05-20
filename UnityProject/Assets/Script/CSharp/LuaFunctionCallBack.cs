@@ -36,4 +36,18 @@ public class LuaFunctionCallBack
             luaFunction.Call(callBack.luaTable,playable, info, paramList);
         }
     }
+
+    public static void Invoke(LuaFunctionCallBack callBack, Playable playable, FrameData info, object o)
+    {
+        LuaFunction luaFunction = callBack.luaFunction;
+
+        if (luaFunction != null)
+        {
+            //List自定义的类型无法获取，对应的键值，按照网上的教程都试了一遍，在导出文件中_GT(Typeof(List<ClipParam>)，
+            //并且ClipParam类型也导出了，但是依旧无法获取自定义类型的属性，猜测需要某些特定的方法才行，目前暂时使用
+            // string 传到lua层再做解析
+            luaFunction.Call(callBack.luaTable, playable, info,o);
+        }
+    }
 }
+

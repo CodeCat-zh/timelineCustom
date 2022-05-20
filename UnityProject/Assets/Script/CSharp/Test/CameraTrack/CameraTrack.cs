@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Timeline;
 
 [Serializable]
-[TrackClipType(typeof(TextPlayAsset))]
+[TrackClipType(typeof(CameraPlayableAsset))]
 [TrackBindingType(typeof(GameObject))]
 [ExcludeFromPreset]
 public class CameraTrack : TrackAsset

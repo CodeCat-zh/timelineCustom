@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.Timeline;
 
 [Serializable]
-[TrackClipType(typeof(TextPlayAsset))]
-[TrackBindingType(typeof(GameObject))]
+[TrackClipType(typeof(AnimationPlayableAsset))]
+[TrackBindingType(typeof(Animator))]
 [ExcludeFromPreset]
-public class AnimationTrack : TrackAsset
+public class MyAnimationTrack : TrackAsset
 {
   
 }

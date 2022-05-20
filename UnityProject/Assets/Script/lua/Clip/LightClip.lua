@@ -1,27 +1,23 @@
-TextClip = {}
-function TextClip:OnBehaviourPlay(args)
-    self.type = args[0]
-    self.id = args[1]
-    self.playable = args[2]
-    self.info = args[3]
-    self.parmaList ={}
-    local initPosIndex = 4
-    for i = 0,args.Length - initPosIndex - 1  do
-        print(i,args[ i + initPosIndex ])
-    end
-    print("OnBehaviourPlay")
+LightClip = {}
+---@deprecated: 舞台灯光
+---@deprecated: 灯光的初始位置，初始旋转角度位置，终止旋转角度位置，运动速度，灯光的颜色，亮度
+function LightClip:OnBehaviourPlay(playable,info,paramList)
+    self.InitPos =paramList[1]
+    self.initRota = paramList[2]
+    self.endRota =paramList[3]
+    self.speed =paramList[4]
+    self.lightColor =paramList[5]
+    self.lightPower =paramList[6]
+    self.type = paramList[7]
+    self.id = paramList[8]
 end
 
 
-function TextClip:OnBehaviourPause(args)
+function LightClip:OnBehaviourPlay(playable,info)
 
 end
 
-function TextClip:PrepareFrame( args)
-
-end
-
-function TextClip:ProcessFrame(args)
+function LightClip:ProcessFrame(playable,info)
 
 end
 

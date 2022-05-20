@@ -227,10 +227,6 @@ MonoBehaviour:
   - 111111111111
   - true
   - 1
-  - TextClip
-  - 42
-  - TextClip
-  - 42
   preGameObject: {fileID: 1963830774607520272, guid: 31989b6c971f76448903afb7fd738546, type: 3}
   speed: 2
   text: 111111111111
