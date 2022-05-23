@@ -9,7 +9,6 @@ namespace Cutscene
             return (float)playable.GetTime();
         }
 
-
         public static float GetDuration(Playable playable)
         {
             return (float)playable.GetDuration();

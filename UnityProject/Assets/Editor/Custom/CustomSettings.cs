@@ -182,6 +182,7 @@ public static class CustomSettings
         _GT(typeof(Resources)),     
         _GT(typeof(TextMeshPro)), 
         _GT(typeof(TMP_Text)),
+        _GT(typeof(PlayableUntil)),
         _GT(typeof(LuaProfiler)),
     };
 

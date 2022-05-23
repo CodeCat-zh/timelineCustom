@@ -29,6 +29,7 @@ function LoadAssetMgr.FindOrInstanceGameObject(path)
 end
 
 function LoadAssetMgr.LoadPlayable(name)
+     print("Load")
      local result = UnityEngine.Resources.Load(name,typeof(UnityEngine.Timeline.TimelineAsset))
      return result
 end

@@ -100,12 +100,12 @@ public class TimeLineUnities
                     }
                 }
             }
-            var asset = newClip.asset as CommonPlayableAsset;
             var oldAsset = clip.asset as CommonPlayableAsset;
-            asset.type = oldAsset.type;
-            asset.id = oldAsset.id;
-            asset.paramList = oldAsset.paramList;
-            Debug.Log(newClip.asset == null);
+            var newAsset = newClip.asset as CommonPlayableAsset;
+            newAsset.type = oldAsset.type;
+            newAsset.id = oldAsset.id;
+            newAsset.paramList = oldAsset.GetParamList();
+         
         }
         return newTrack;
     }

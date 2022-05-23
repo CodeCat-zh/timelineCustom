@@ -10,16 +10,18 @@ namespace Cutscene
     {
         public string type;
         public int id;
-        public List<string> paramList = new List<string>();
+        public List<string> paramList;
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
+#if UNITY_EDTIOR
             paramList = GetParamList();
-      
-            return  CreateCommonPlayAsset(graph,owner, type,paramList);
+#endif
+            return CreateCommonPlayAsset(graph,owner, type,paramList);
         }
 
         public static Playable CreateCommonPlayAsset(PlayableGraph graph,GameObject go,string type,List<string> paramList)
         {
+
             LuaFunctionCallBack behaviourPlayCallBack = null;
             LuaFunctionCallBack behaviourPauseCallBack = null;
             LuaFunctionCallBack prepareFrameCallBack = null;

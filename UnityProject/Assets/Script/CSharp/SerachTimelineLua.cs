@@ -29,7 +29,4 @@ public class SerachTimelineLua : MonoBehaviour
         return binder;
     }
     
-
-
-
 }

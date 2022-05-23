@@ -16,15 +16,15 @@ MonoBehaviour:
   id: 0
   paramList:
   - Assets/Resources/ChatView.prefab
-  - 1
-  - This is Test About CSharp Executed Lua Function
-  - true
-  - 1
+  - 5
+  - dsfdsfsaffasgfsdfadf
+  - false
+  - 2
   preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
-  speed: 1
-  text: This is Test About CSharp Executed Lua Function
-  isPlay: 1
-  testNum: 1
+  speed: 5
+  text: dsfdsfsaffasgfsdfadf
+  isPlay: 0
+  testNum: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
