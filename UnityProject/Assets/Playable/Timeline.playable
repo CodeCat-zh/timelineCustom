@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9123267673749686349
+--- !u!114 &-4774090708967085358
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,18 +13,13 @@ MonoBehaviour:
   m_Name: TextPlayAsset
   m_EditorClassIdentifier: 
   type: TextClip
-  id: 0
-  paramList:
-  - Assets/Resources/ChatView.prefab
-  - 5
-  - dsfdsfsaffasgfsdfadf
-  - false
-  - 2
+  id: 1
+  paramList: []
   preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
-  speed: 5
-  text: dsfdsfsaffasgfsdfadf
-  isPlay: 0
-  testNum: 2
+  speed: 1
+  text: fdfdfasdfsdafdfsadf
+  isPlay: 1
+  testNum: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,14 +34,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
-  - {fileID: 288596657969312489}
+  - {fileID: 3419406007594429875}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
   m_MarkerTrack: {fileID: 0}
---- !u!114 &288596657969312489
+--- !u!114 &3419406007594429875
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,12 +63,81 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.9166666666666666
+    m_Start: 0.9333333333333333
     m_ClipIn: 0
-    m_Asset: {fileID: -9123267673749686349}
+    m_Asset: {fileID: 8938080821584271037}
     m_Duration: 5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 288596657969312489}
+    m_ParentTrack: {fileID: 3419406007594429875}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: TextPlayAsset
+  - m_Version: 1
+    m_Start: 7.483333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: -4774090708967085358}
+    m_Duration: 5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 3419406007594429875}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: 0
@@ -138,3 +202,23 @@ MonoBehaviour:
     m_DisplayName: TextPlayAsset
   m_Markers:
     m_Objects: []
+--- !u!114 &8938080821584271037
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a50ddd9ebe574449dbbe41a5aacbda, type: 3}
+  m_Name: TextPlayAsset
+  m_EditorClassIdentifier: 
+  type: TextClip
+  id: 0
+  paramList: []
+  preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
+  speed: 1
+  text: This is Test About CSharp Executed Lua Function
+  isPlay: 1
+  testNum: 1
