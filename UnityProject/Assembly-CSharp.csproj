@@ -376,6 +376,12 @@
     <Compile Include="Assets\Art\PostProcessing\Runtime\Components\TaaComponent.cs" />
     <Compile Include="Assets\Source\Generate\TMPro_TextMeshProWrap.cs" />
     <Compile Include="Assets\Source\Generate\TMPro_TMP_TextWrap.cs" />
+    <Compile Include="Assets\Script\CSharp\Mgr\PlayableUntil.cs" />
+    <Compile Include="Assets\Source\Generate\Cutscene_PlayableUntilWrap.cs" />
+    <Compile Include="Assets\Source\Generate\UnityEngine_RectTransformWrap.cs" />
+    <Compile Include="Assets\Source\Generate\SerachTimelineLuaWrap.cs" />
+    <Compile Include="Assets\Script\CSharp\LuaStateMgr.cs" />
+    <Compile Include="Assets\Source\Generate\LuaStateMgrWrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\UnityChan\unitychan_hw\Shader\Unitychan_chara_fuku.shader" />

@@ -5,7 +5,6 @@ using UnityEngine.Playables;
 
 namespace Cutscene
 {
-    
     public class CommonPlayableBehaviour : PlayableBehaviour
     {
         public LuaFunctionCallBack behaviourPlayCallBack;
@@ -41,9 +40,10 @@ namespace Cutscene
         }
 
         public override void ProcessFrame(Playable playable, FrameData info, object playerData)
-        {
+        {          
             if (processFrameCallBack != null)
             {
+                Debug.Log(prepareFrameCallBack.luaFunction != null);
                 LuaFunctionCallBack.Invoke(processFrameCallBack, playable, info,playerData);
             }
         }

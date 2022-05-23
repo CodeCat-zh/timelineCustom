@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Timeline;
 public class TimeLineUnities 
 {
-    private static string assetBundlePreName = "";
+ 
     public static List<string> ConvertFieldToString(CommonPlayableAsset commonPlayableAsset)
     {
         List<string> fieldList = new List<string>();
@@ -21,7 +21,6 @@ public class TimeLineUnities
             foreach(FieldConvertToString field in oAttributeArr )
             {
                 object value = prop.GetValue(commonPlayableAsset);
-
                 string convertResult = GetPropertyToString(field,value,prop.Name);
                 fieldList.Add(convertResult);
                 break;
@@ -63,33 +62,29 @@ public class TimeLineUnities
         return result;
     }
 
-
+   
     public static void ExportLoadAssetConfig(CommonPlayableAsset commonPlayableAsset)
     {
 
     }
 
-    public static void ConvertToCommonPlayableAsset(TimelineAsset timelineAsset)
+    public static void ConvertToCommonPlayableAsset(TimelineAsset timelineAsset,TimelineAsset tmpTimeline)
     {
         var root = timelineAsset.GetOutputTracks();
-        TimelineAsset tmpTimeline = new TimelineAsset();
-        tmpTimeline.name = timelineAsset.name;
         foreach(var track in root)
         {
-            var newTrack = CovertToComonTrack(tmpTimeline, track);
-            timelineAsset.DeleteTrack(track);
+            CovertToComonTrack(tmpTimeline, track);
         }
-        timelineAsset = tmpTimeline;
     }
 
     public static TrackAsset CovertToComonTrack(TimelineAsset timelineAsset,TrackAsset track)
     {
         var newTrack = timelineAsset.CreateTrack<CommonTrack>();
+        newTrack.name = track.name;
         var clipRoot = track.GetClips();
         foreach (var clip in clipRoot)
         {
             var newClip = newTrack.CreateClip<CommonPlayableAsset>();
-
             Type type = clip.GetType();
             Type newType = newClip.GetType();
             FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
@@ -98,21 +93,20 @@ public class TimeLineUnities
                 if (!prop.Name.Equals("asset"))
                 {
                     var value = prop.GetValue(clip);
-                    newType.GetProperty(prop.Name).SetValue(newClip, value, null);
+                    var proInfo = newType.GetProperty(prop.Name);
+                    if ( proInfo !=  null && value != null )
+                    { 
+                        proInfo.SetValue(newClip, value, null);
+                    }
                 }
             }
-
             var asset = newClip.asset as CommonPlayableAsset;
             var oldAsset = clip.asset as CommonPlayableAsset;
             asset.type = oldAsset.type;
             asset.id = oldAsset.id;
-            List<string> paramList = asset.GetParamList();
-            asset.paramList.AddRange(paramList);
-
+            asset.paramList = oldAsset.paramList;
+            Debug.Log(newClip.asset == null);
         }
         return newTrack;
     }
-
-
-
 }

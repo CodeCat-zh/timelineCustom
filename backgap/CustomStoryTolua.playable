@@ -181,6 +181,14 @@ MonoBehaviour:
   - Sign sing  sing
   - true
   - 4
+  - TextClip
+  - 93
+  - TextClip
+  - 93
+  - TextClip
+  - 93
+  - TextClip
+  - 93
   preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
   speed: 3
   text: Sign sing  sing
@@ -224,12 +232,20 @@ MonoBehaviour:
   paramList:
   - Assets/Resources/ChatView.prefab
   - 2
-  - 222222222222222
+  - 123456789
   - true
   - 1
+  - TextClip
+  - 92
+  - TextClip
+  - 92
+  - TextClip
+  - 92
+  - TextClip
+  - 92
   preGameObject: {fileID: 2687649775453417706, guid: 31989b6c971f76448903afb7fd738546, type: 3}
   speed: 2
-  text: 222222222222222
+  text: 123456789
   isPlay: 1
   testNum: 1
 --- !u!114 &4606003497830927793

@@ -19,14 +19,9 @@ public class TextPlayAsset : CommonPlayableAsset
     [FieldConvertToString(PlayableFieldEnum.Int)]
     public int testNum = 1;
 
-
     public TextPlayAsset()
     {
         this.type = "TextClip";
     }
-
-
-
-
 
 }

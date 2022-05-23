@@ -9,16 +9,13 @@ public class SerachTimelineLua : MonoBehaviour
     private static LuaState state;
     private LuaFunction luaFunc;
     private LuaTable table;
+
+
     public LuaFunctionBinder GetBinderByType(string type)
     {
+        state = LuaStateMgr.GetLuaState();
         searchRootPath = Application.dataPath + "/Script/lua/Clip";
-        if (state == null)
-        {
-            state = new LuaState();
-            state.AddSearchPath(searchRootPath);
-            state.Start();           // 启动2:虚拟机初始化。
-            LuaBinder.Bind(state);  // 踩坑创建lua虚拟机后，即使不启动，不绑定，依旧可以将执行
-        }
+        state.AddSearchPath(searchRootPath);
         state.DoFile(type);
         var binder = new LuaFunctionBinder();
         var luaClip = state.GetTable(type);
@@ -29,15 +26,10 @@ public class SerachTimelineLua : MonoBehaviour
             binder.PrepareFrameCallBack = new LuaFunctionCallBack(luaClip.GetLuaFunction("PrepareFrame"), luaClip);
             binder.ProcessFrameCallBack = new LuaFunctionCallBack(luaClip.GetLuaFunction("ProcessFrame"), luaClip);
         }
-
-
-      
         return binder;
     }
     
-    public void OnDestroy()
-    {
-        state.Dispose();
-    }
+
+
 
 }

@@ -28,4 +28,9 @@ function LoadAssetMgr.FindOrInstanceGameObject(path)
     return tmpObj
 end
 
+function LoadAssetMgr.LoadPlayable(name)
+     local result = UnityEngine.Resources.Load(name,typeof(UnityEngine.Timeline.TimelineAsset))
+     return result
+end
+
 

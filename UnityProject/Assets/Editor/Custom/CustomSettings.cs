@@ -60,8 +60,6 @@ public static class CustomSettings
         _GT(typeof(LuaInjectionStation)),
         _GT(typeof(InjectType)),
         _GT(typeof(Debugger)).SetNameSpace(null),
-
-
         _GT(typeof(UnityEngine.UI.Button)),
         _GT(typeof(UnityEngine.UI.Text)),
         _GT(typeof(UnityEngine.UI.Image)),
@@ -76,22 +74,24 @@ public static class CustomSettings
         _GT(typeof(UnityEngine.EventSystems.UIBehaviour)),
         _GT(typeof(UnityEngine.UI.Graphic)),
         _GT(typeof(UnityEngine.Canvas)),
- 
+        _GT(typeof(RectTransform)),
 
         _GT(typeof(UnityEngine.Playables.FrameData)),
         _GT(typeof(UnityEngine.Playables.Playable)),
         _GT(typeof(UnityEngine.Playables.PlayableBehaviour)),
         _GT(typeof(UnityEngine.Playables.PlayableDirector)),
         _GT(typeof(UnityEngine.Playables.PlayableBinding)),
+       
         _GT(typeof(UnityEngine.Timeline.ClipCaps)),
         _GT(typeof(UnityEngine.Timeline.TrackAsset)),
         _GT(typeof(UnityEngine.Timeline.TimelinePlayable)),
         _GT(typeof(UnityEngine.Timeline.TimelineAsset)),
+         _GT(typeof(Cutscene.PlayableUntil)),
         _GT(typeof(Cutscene.CommonPlayableAsset)),
         _GT(typeof(Cutscene.CommonPlayableBehaviour)),
         _GT(typeof(Cutscene.CommonTrack)),
-        
-
+        _GT(typeof(SerachTimelineLua)),
+        _GT(typeof(LuaStateMgr)),
 #if USING_DOTWEENING
         _GT(typeof(DG.Tweening.DOTween)),
         _GT(typeof(DG.Tweening.Tween)).SetBaseType(typeof(System.Object)).AddExtendType(typeof(DG.Tweening.TweenExtensions)),

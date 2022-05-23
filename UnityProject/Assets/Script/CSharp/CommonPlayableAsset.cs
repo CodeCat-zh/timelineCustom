@@ -10,7 +10,7 @@ namespace Cutscene
     {
         public string type;
         public int id;
-        public List<string> paramList;
+        public List<string> paramList = new List<string>();
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {
             paramList = GetParamList();
@@ -35,7 +35,6 @@ namespace Cutscene
                 behaviourPauseCallBack = binder.BehaviourPauseCallBack;
                 prepareFrameCallBack = binder.PrepareFrameCallBack;
                 processFrameCallBack = binder.ProcessFrameCallBack;
-                Debug.Log(prepareFrameCallBack.luaFunction == null);
             }
 
             CommonPlayableBehaviour behaviourTemplate = new CommonPlayableBehaviour

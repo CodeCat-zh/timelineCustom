@@ -24,15 +24,21 @@ end
 
 function TextClip:ProcessFrame(playable,info,bingGameObject)
     print("ProcessFrame")
-    local progress = playable:GetTime() / playable:GetDuration()
-    print(progress,playable:GetTime(),playable:GetDuration())
+    local progress =Cutscene.PlayableUntil.GetTime(playable) / Cutscene.PlayableUntil.GetDuration(playable)
     local currentWeight = self.colorText.preferredWidth * progress
-    local height = self.colorText.preferredHeight
-    self.mask.rectTransform.sizeDelta =Vector2(currentWeight,height)
+    local offset = 10
+    local height = self.colorText.preferredHeight + offset
+    print(currentWeight,height)
+    self.maskRect =  self.mask:GetComponent(typeof(UnityEngine.RectTransform))
+    self.maskRect.sizeDelta =Vector2(currentWeight,height)
 end
+
+
 function TextClip:OnBehaviourPause()
     print("OnBehaviourPause")
 end
+
+
 function TextClip:PrepareFrame()
     print("PrepareFrame")
 end

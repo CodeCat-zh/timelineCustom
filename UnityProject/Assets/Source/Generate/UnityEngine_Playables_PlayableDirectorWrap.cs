@@ -95,14 +95,14 @@ public class UnityEngine_Playables_PlayableDirectorWrap
 			else if (count == 2)
 			{
 				UnityEngine.Playables.PlayableDirector obj = (UnityEngine.Playables.PlayableDirector)ToLua.CheckObject<UnityEngine.Playables.PlayableDirector>(L, 1);
-				UnityEngine.Playables.PlayableAsset arg0 = (UnityEngine.Playables.PlayableAsset)ToLua.CheckObject<UnityEngine.Playables.PlayableAsset>(L, 2);
+				UnityEngine.Playables.PlayableAsset arg0 = (Cutscene.CommonPlayableAsset)ToLua.CheckObject<Cutscene.CommonPlayableAsset>(L, 2);
 				obj.Play(arg0);
 				return 0;
 			}
 			else if (count == 3)
 			{
 				UnityEngine.Playables.PlayableDirector obj = (UnityEngine.Playables.PlayableDirector)ToLua.CheckObject<UnityEngine.Playables.PlayableDirector>(L, 1);
-				UnityEngine.Playables.PlayableAsset arg0 = (UnityEngine.Playables.PlayableAsset)ToLua.CheckObject<UnityEngine.Playables.PlayableAsset>(L, 2);
+				UnityEngine.Playables.PlayableAsset arg0 = (Cutscene.CommonPlayableAsset)ToLua.CheckObject<Cutscene.CommonPlayableAsset>(L, 2);
 				UnityEngine.Playables.DirectorWrapMode arg1 = (UnityEngine.Playables.DirectorWrapMode)ToLua.CheckObject(L, 3, typeof(UnityEngine.Playables.DirectorWrapMode));
 				obj.Play(arg0, arg1);
 				return 0;
