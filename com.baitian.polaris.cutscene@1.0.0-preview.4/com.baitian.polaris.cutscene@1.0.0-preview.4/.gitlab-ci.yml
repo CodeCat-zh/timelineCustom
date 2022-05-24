@@ -1,4 +1,0 @@
-include:
-  - project: 'polaris/client/ci-template'
-    ref: master
-    file: 'template.yml'
