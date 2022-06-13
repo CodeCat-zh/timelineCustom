@@ -21,7 +21,6 @@ public static class LuaBinder
 		L.BeginModule("UnityEngine");
 		UnityEngine_CanvasWrap.Register(L);
 		UnityEngine_RectTransformWrap.Register(L);
-		UnityEngine_ScriptableObjectWrap.Register(L);
 		UnityEngine_ComponentWrap.Register(L);
 		UnityEngine_TransformWrap.Register(L);
 		UnityEngine_MaterialWrap.Register(L);
@@ -61,6 +60,7 @@ public static class LuaBinder
 		UnityEngine_QualitySettingsWrap.Register(L);
 		UnityEngine_RenderSettingsWrap.Register(L);
 		UnityEngine_ResourcesWrap.Register(L);
+		UnityEngine_ScriptableObjectWrap.Register(L);
 		UnityEngine_AudioBehaviourWrap.Register(L);
 		L.BeginModule("UI");
 		UnityEngine_UI_ButtonWrap.Register(L);
