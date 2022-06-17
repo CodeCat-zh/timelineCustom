@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/tolua-master/Assets/ToLua/Examples/08_AccessingArray/AccessingArray.unity
+- path: Assets/Scenes/CustomStoryEditor.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
