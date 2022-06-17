@@ -54,6 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="E:\code\timelineCustom\UnityProject\Assets\ToLua\Plugins\CString.dll" />
+    <Analyzer Include="E:\code\timelineCustom\UnityProject\Assets\ToLua\Plugins\Debugger.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ToLua\BaseType\System_StringWrap.cs" />
@@ -284,21 +286,25 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\ToLua\Plugins\Debugger.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\ToLua\Injection\InjectionBlackList.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\ToLua\Plugins\x86_64\tolua.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\ToLua\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\ToLua\Plugins\x86\tolua.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\ToLua\Injection\InjectionBridgeEditorInfo.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\ToLua\Injection\LuaInjectionSkipPaths.txt" />
+    <None Include="Assets\ToLua\Plugins\CString.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -529,11 +535,11 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity 2020.3.29f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Debugger">
-      <HintPath>Assets\Plugins\Debugger.dll</HintPath>
-    </Reference>
     <Reference Include="CString">
-      <HintPath>Assets\Plugins\CString.dll</HintPath>
+      <HintPath>Assets\ToLua\Plugins\CString.dll</HintPath>
+    </Reference>
+    <Reference Include="Debugger">
+      <HintPath>Assets\ToLua\Plugins\Debugger.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity 2020.3.29f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
