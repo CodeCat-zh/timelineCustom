@@ -1,8 +1,0 @@
-require('Services.Cutscene.DirectorOverlayUI.Data.DirectorOverBaseData')
-require('Services.Cutscene.DirectorOverlayUI.Data.DirectorOverTextData')
-require('Services.Cutscene.DirectorOverlayUI.Data.DirectorOverTextureData')
-require('Services.Cutscene.DirectorOverlayUI.Data.DirectorOverlayUIAtlasData')
-require('Services.Cutscene.DirectorOverlayUI.Data.ColorVector4Tween')
-require('Services.Cutscene.DirectorOverlayUI.Data.RectVector4Tween')
-require('Services.Cutscene.DirectorOverlayUI.Data.DirectorOverlayUIAtlasGroupCls')
-require('Services.Cutscene.DirectorOverlayUI.Data.DirectorOverlayUIAtlasDataCls')
