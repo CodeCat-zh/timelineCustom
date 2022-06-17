@@ -1,0 +1,19 @@
+{
+  "name": "com.baitian.polaris.cutscene",
+  "version": "1.0.0-preview.4",
+  "unity": "2020.2",
+  "unityRelease": "3f1",
+  "displayName": "Polaris Cutscene",
+  "description": "PolarisCutscene package",
+  "category": "basic",
+  "publishConfig": {
+    "registry": "http://repo.bt/repository/unity-polaris/"
+  },
+  "keywords": [
+    "cutscene",
+    "polaris"
+  ],
+  "dependencies": {
+
+  }
+}

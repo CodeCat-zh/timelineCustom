@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/CustomStoryEditor.unity
+- path: Assets/Scenes/CustomStoryTolua.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

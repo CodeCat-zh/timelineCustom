@@ -1,0 +1,6 @@
+require('Services.Cutscene.Timeline.PlayableCreator.Actor.ActorInfoPlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.Actor.ActorControlPlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.Actor.ActorTransformPlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.Actor.ActorAudioPlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.Actor.ActorFollowPlayableCreator')
+require('Services.Cutscene.Timeline.PlayableCreator.Actor.GhostPlayableCreator')

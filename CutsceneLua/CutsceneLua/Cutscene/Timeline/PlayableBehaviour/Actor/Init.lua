@@ -1,0 +1,5 @@
+require('Services.Cutscene.Timeline.PlayableBehaviour.Actor.Transform')
+require('Services.Cutscene.Timeline.PlayableBehaviour.Actor.Control')
+require('Services.Cutscene.Timeline.PlayableBehaviour.Actor.Audio')
+require('Services.Cutscene.Timeline.PlayableBehaviour.Actor.Follow')
+require('Services.Cutscene.Timeline.PlayableBehaviour.Actor.Ghost')
